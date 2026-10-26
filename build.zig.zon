@@ -1,0 +1,25 @@
+.{
+    .name = .winio,
+    .fingerprint = 0xe08539468bac69bc,
+    .version = "0.0.0",
+    .minimum_zig_version = "0.17.0",
+    .dependencies = .{
+        .win32 = .{
+            .url = "git+https://github.com/marlersoft/zigwin32#fb2645891520f3e99931db17a7eba04057e87e89",
+            .hash = "win32-42.0.39-preview-mX5pFc794wMcrMyFgsO1c4csBdowhpiqqwIyN_xjqI5z",
+            // Not fetched for a dependent that sets `external_win32` (build.zig).
+            .lazy = true,
+        },
+        // The 0.17.0 release, for std's own std.Io tests (`zig build test -Dtest`).
+        .zig = .{
+            .url = "git+https://github.com/ziglang/zig#7647adab80dd088f4de3610fd245915a912eb6ad",
+            .hash = "zig-0.0.0-Fp4XJNPbSg7JHi19U9bkBViqpw1CEGENf1JhYBLHWjMq",
+            .lazy = true,
+        },
+    },
+    .paths = .{
+        "build.zig",
+        "build.zig.zon",
+        "src",
+    },
+}
